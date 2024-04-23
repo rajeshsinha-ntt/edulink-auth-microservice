@@ -26,7 +26,7 @@ export class ServiceHealthService {
 		// generate health information of the application
 		const applicationHealth = new HealthDataModel(
 			applicationName.length === 0
-				? 'edulink-user-microservice'
+				? 'edulink-auth-microservice'
 				: applicationName,
 			applicationVersion.length === 0
 				? 'version data not available'
