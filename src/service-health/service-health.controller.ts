@@ -7,10 +7,10 @@ import { HealthResponse } from '../types/service-health-response.type';
 export class ServiceHealthController {
     constructor(private readonly healthService: ServiceHealthService){}
     @Get()
-    getServiceHealth(
+   async getServiceHealth(
         @Query('dependency-health') dependency : boolean
-    ): HealthResponse {
-        const serviceHealth = this.healthService.getHealthInformation(dependency);
+    ): Promise<HealthResponse> {
+        const serviceHealth = await this.healthService.getHealthInformation(dependency);
 		// return service-health response
 		return {
 			'response-timestamp': CommonHelper.getCurrentTimestampInISOFormat(),

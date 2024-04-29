@@ -53,6 +53,17 @@ export class HealthDataModel implements IBaseResponseModel {
 		this.dependencyHealth = [];
 	}
 
+	/**
+	 * method to add dependency health information.
+	 *
+	 * @param dependencyHealth - instance of HealthDataModel containing health information of
+	 * a dependency.
+	 */
+	public addDependencyHealthData(dependencyHealth: HealthDataModel): void {
+		// add provided dependency health information
+		this.dependencyHealth.push(dependencyHealth);
+	}
+
 	jsonify(): object {
 		return {
 			'application-name': this.applicationName,

@@ -8,9 +8,9 @@ import { ApplicationStatus } from '../types/enums/application-status.enum';
 export class ServiceHealthService {
     constructor(private configService: ConfigService) {}
 
-    getHealthInformation(
+    public async getHealthInformation(
 		dependency: boolean,
-	): HealthDataModel {
+	): Promise<HealthDataModel> {
 		// retrieve name of the application
 		const applicationName = CommonHelper.getEnvironmentVariableValue(
 			'npm_package_name',
