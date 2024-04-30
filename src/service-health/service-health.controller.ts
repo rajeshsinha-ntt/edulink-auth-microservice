@@ -3,7 +3,7 @@ import { ServiceHealthService } from './service-health.service';
 import { CommonHelper } from '../helpers/common.helper';
 import { HealthResponse } from '../types/service-health-response.type';
 
-@Controller('api/service-health')
+@Controller('api/health')
 export class ServiceHealthController {
     constructor(private readonly healthService: ServiceHealthService){}
     @Get()
