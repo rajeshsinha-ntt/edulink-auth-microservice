@@ -1,11 +1,9 @@
 import { ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
 import { ServiceHealthService } from '../../../src/service-health/service-health.service';
-import { ServiceHealthController } from '../../../src/service-health/service-health.controller';
 import { HealthDataModel } from '../../../src/models/response/health.model';
 import { ApplicationStatus } from '../../../src/types/enums/application-status.enum';
 import { CommonHelper } from '../../../src/helpers/common.helper';
-import { HealthResponse } from '../../../src/types/service-health-response.type';
 
 
 describe('test method: getHealthInformation', () => {

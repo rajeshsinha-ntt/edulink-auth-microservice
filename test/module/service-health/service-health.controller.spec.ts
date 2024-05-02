@@ -5,7 +5,7 @@ import { ServiceHealthController } from '../../../src/service-health/service-hea
 import { HealthDataModel } from '../../../src/models/response/health.model';
 import { ApplicationStatus } from '../../../src/types/enums/application-status.enum';
 import { CommonHelper } from '../../../src/helpers/common.helper';
-import { HealthResponse } from '../../../src/types/service-health-response.type';
+import { THealthResponse } from '../../../src/types/service-health-response.type';
 
 describe('test method: getServiceHealth', () => {
 	// create reference for instance of HealthService
@@ -52,7 +52,7 @@ describe('test method: getServiceHealth', () => {
 		).mockResolvedValueOnce(mockHealthDataStatusUp);
 
 		// create expected response
-		const expectedResponse: HealthResponse = {
+		const expectedResponse: THealthResponse = {
 			'response-timestamp': mockCurrentTimeStampString,
 			'response-data': mockHealthDataStatusUp.jsonify(),
 		};
@@ -71,7 +71,7 @@ describe('test method: getServiceHealth', () => {
 		).mockResolvedValueOnce(mockHealthDataStatusUp);
 
 		// create expected response
-		const expectedResponse: HealthResponse = {
+		const expectedResponse: THealthResponse = {
 			'response-timestamp': mockCurrentTimeStampString,
 			'response-data': mockHealthDataStatusUp.jsonify(),
 		};
