@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "c6ac41a8-9600-4031-9322-8df9aede9e52",
+		"name": "Edulink-Auth-Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34461176"
+	},
+	"item": [
+		{
+			"name": "service-health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"health"
+					],
+					"query": [
+						{
+							"key": "dependency-health",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
