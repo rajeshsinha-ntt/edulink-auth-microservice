@@ -12,6 +12,8 @@ export class AuthController {
 		@Body() body: CreateTokenDto,
 	): Promise<{ token: string }> {
 		const token = await this.authService.createToken(body.id);
+		console.log(`token: ${token}`);
+
 		return { token };
 	}
 	@Post('verify-token')
