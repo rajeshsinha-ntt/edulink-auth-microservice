@@ -18,7 +18,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 					'JWT_SECRET_KEY',
 					configService,
 				),
-				signOptions: { expiresIn: '1h' },
+				signOptions: {
+					expiresIn: CommonHelper.getEnvironmentVariableValue(
+						'JWT_EXPIRY',
+						configService,
+					),
+				},
 			}),
 		}),
 	],
