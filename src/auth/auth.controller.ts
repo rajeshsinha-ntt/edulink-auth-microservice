@@ -17,10 +17,7 @@ export class AuthController {
 		return { token };
 	}
 	@Post('verify-token')
-	async verifyToken(
-		@Body() body: VerifyTokenDto,
-	): Promise<{ valid: boolean }> {
-		const isValid = await this.authService.verifyToken(body.token);
-		return { valid: isValid };
+	async verifyToken(@Body() body: VerifyTokenDto) {
+		return this.authService.verifyToken(body.token);
 	}
 }

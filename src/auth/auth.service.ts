@@ -8,12 +8,17 @@ export class AuthService {
 		const payload = { userId };
 		return this.jwtService.sign(payload);
 	}
-	async verifyToken(token: string): Promise<boolean> {
+	async verifyToken(token: string) {
 		try {
-			this.jwtService.verify(token);
-			return true;
+			const res = this.jwtService.verify(token);
+			const validResponse = { valid: true, userId: res.userId };
+			console.debug(
+				`Token verified respone: ${JSON.stringify(validResponse)}`,
+			);
+			return validResponse;
 		} catch (e) {
-			return false;
+			console.error(`Error: ${JSON.stringify(e)}`);
+			return { valid: false, message: e.message };
 		}
 	}
 }
